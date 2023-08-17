@@ -1,9 +1,15 @@
-import React from "react";
+import React, {Fragment} from 'react';
 
-function Header() {
+function Header(props) {
+
+    console.log(props)
+
     return(
-        <h1>Hola Mundo..!</h1>
-    )
+        <Fragment>
+        <h1>{props.titulo}</h1>
+        <p>{props.descripcion}</p>
+        </Fragment>
+    );
 }
 
 export default Header;

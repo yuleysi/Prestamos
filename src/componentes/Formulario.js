@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { calcularTotal } from '../helpers';
 
 const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
     //Definir State
@@ -13,7 +14,11 @@ const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
             console.log('Hay un error');
         }
 
+        //eliminar el error previo
+        guardarError(false);
+
         //realizar la cotización 
+        calcularTotal(cantidad,plazo);
     }
 
     return (  

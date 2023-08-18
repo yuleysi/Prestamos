@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Fragment,useState} from 'react';
 import { calcularTotal } from '../helpers';
 
 const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
@@ -24,6 +24,7 @@ const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
     }
 
     return (  
+        <Fragment>
         <form onSubmit={ calcularPrestamo}>
         <div className="row">
             <div>
@@ -48,16 +49,18 @@ const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
                     <option value="24">24 meses</option>
                 </select>
             </div>
-            <div>
+             <div>
                 <input
                 type="submit"
                 value="Calcular"
                 className="button-primary u-full-width"
                 />
              </div>
-        </div>
+            </div>
+        </form>
 
-    </form>
+        {(error) ? <p className='error'>Todos los campos son obligatorios</p> : null }
+        </Fragment>
     );
 }
  

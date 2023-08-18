@@ -11,14 +11,16 @@ const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
 
         //validar 
         if(cantidad === 0 || plazo === ''){
-            console.log('Hay un error');
+            guardarError(true);
+            return;
         }
 
         //eliminar el error previo
         guardarError(false);
 
         //realizar la cotización 
-        calcularTotal(cantidad,plazo);
+        const total = calcularTotal(cantidad,plazo);
+        console.log(total);
     }
 
     return (  

@@ -1,14 +1,24 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 import Header from './componentes/Header';
+import Formulario from './componentes/Formulario';
 
 function App() {
+  //Definir el state
+  const [cantidad, guardarCantidad] = useState(0);
+
   return (
     <Fragment>
       <Header
       titulo ="Cotizador de Prestamos"
-      descripcion="Utiliza el formulario y obten una cotizacion
-      de prestamos"
       />
+
+      <div className="container">
+
+        <Formulario
+            cantidad={cantidad}
+            guardarCantidad={guardarCantidad}
+        />
+      </div>
     </Fragment>
 
   );
